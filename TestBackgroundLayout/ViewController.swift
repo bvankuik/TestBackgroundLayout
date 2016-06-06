@@ -10,6 +10,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "ViewController"
+        
+        // If you enable this background, you should manually set the contentInset of the tableview
 //        self.addBackground()
 
         // Set up container for the tableview
@@ -19,7 +21,7 @@ class ViewController: UIViewController {
         self.view.addSubview(self.containerView)
         
         let viewDict = ["container": self.containerView]
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[container(350)]", options: [], metrics: nil, views: viewDict))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[container(100)]", options: [], metrics: nil, views: viewDict))
         self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[container]|", options: [], metrics: nil, views: viewDict))
 
         // Add tableview controller as child
@@ -28,6 +30,9 @@ class ViewController: UIViewController {
         self.addChildViewController(tableViewController)
         self.containerView.addSubview(tableViewController.view)
         tableViewController.didMoveToParentViewController(self)
+        
+        // Enable this line if you added a background
+//        self.tableViewController.tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
 
         // Layout
         let tableViewDict = ["child": tableViewController.view]

@@ -8,7 +8,7 @@ class TableViewController: UITableViewController {
     ]
     
     override func viewDidLoad() {
-        self.tableView.backgroundColor = UIColor.lightGrayColor()
+        self.tableView.backgroundColor = UIColor.greenColor()
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
